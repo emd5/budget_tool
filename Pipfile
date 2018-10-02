@@ -4,8 +4,16 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+django = "*"
+"psycopg2-binary" = "*"
+django-registration = "*"
+django-sass-processor = "*"
+django-compressor = "*"
+libsass = "*"
+gunicorn = "*"
 
 [dev-packages]
+factory-boy = "*"
 
 [requires]
 python_version = "3.7"

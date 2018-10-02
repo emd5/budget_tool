@@ -1,0 +1,16 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+<div class="category_list">
+{% for category in categories %}
+<div class="status_{{ category }}">
+  <h2>{{ category }}</h2>
+  {% for budget in budgets %}
+    {% if budget.category == category %}
+    <p><a href="{% url "budget_detail" id=budget.id %}">{{ budget.title }}</a></p>
+    {% endif %}
+  {% endfor %}
+</div>
+{% endfor %}
+</div>
+{% endblock content %}
