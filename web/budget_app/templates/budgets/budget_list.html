@@ -1,7 +1,6 @@
 {% extends "base/base.html" %}
 
 {% block content %}
-<div class="budget_list">
 {% for budget in budgets %}
   <h2>{{ budget }}</h2>
   {% for transaction in transactions %}
@@ -9,6 +8,5 @@
     <p><a href="{% url "transaction_detail" id=transaction.id %}">{{ transaction.description }}</a></p>
     {% endif %}
   {% endfor %}
-</div>
 {% endfor %}
 {% endblock content %}
