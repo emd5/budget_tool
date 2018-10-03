@@ -1,7 +1,5 @@
-# Class- based Views
-Django application to help manage some basic finances. The is scaffolding, deployment and 
-implementing the new class-based view controllers in place of function views.
+# Simple Budgeting Application with Django
+Django application to help manage some basic finances. A basic scaffold and 
+implementation of the new class-based view controllers in place of function views.
 
 
-
-#

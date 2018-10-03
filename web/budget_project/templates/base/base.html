@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" type="image/png" href="{% static "assets/../../static/assets/gihubuni.png" %}">
+  <link rel="icon" type="image/png" href="{% static "assets/../../static/assets/gihubuni.png" %}">
 
   <link rel="stylesheet" href="{% static "css/../../static/css/normalize.css" %}">
   <link rel="stylesheet" href="{% static "css/../../static/css/skeleton.css" %}">
@@ -19,7 +19,8 @@
       <ul>
         <li><a href="{% url 'home' %}">Home</a></li>
         {% if user.is_authenticated %}
-        <li><a href="{% url 'budget_view' %}">Budgets</a></li>
+        <li><a href="{% url 'budget_create' %}">Create a Budget</a></li>
+        <li><a href="{% url 'budget_view' %}">Budget List</a></li>
         {% if user.is_superuser %}
         <li><a href="{% url 'admin:index' %}">Admin</a></li>
         {% endif %}

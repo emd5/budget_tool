@@ -4,7 +4,6 @@ from django.db import models
 
 class Budget(models.Model):
     """A budget class that creates attributes in the database"""
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='budget')
     name = models.CharField(max_length=180, default='Untitled')
     total_budget = models.FloatField()
     remaining_budget = models.FloatField()
@@ -17,11 +16,15 @@ class Budget(models.Model):
         """A string representation of the budget object"""
         return '{}'.format(self.name)
 
+    @property
+    def get_remaining_budget(self):
+        """Instantly updates the remaining budget"""
+        return self.remaining_budget
+
 
 class Transaction(models.Model):
     """A transaction class that creates attributes in the database"""
-    budget = models.ForeignKey(User, on_delete=models.CASCADE, related_name='transaction')
-    name = models.CharField(max_length=180, default='Untitled')
+    budget = models.ForeignKey(Budget, on_delete=models.CASCADE, related_name='transaction')
 
     CHOICES = (
         ('withdrawal', 'Withdrawal'),
@@ -38,14 +41,11 @@ class Transaction(models.Model):
 
     def __repr__(self):
         """A representation of the Transaction object"""
-        return '<Transaction: {} | {} | {}>'.format(self.budget, self.name, self.type)
+        return '<Transaction: {} | {} | {} >'.format(self.type, self.amount, self.description)
 
     def __str__(self):
         """A string representation of the Transaction object"""
-        return '{} {} {}'.format(self.budget, self.name, self.type)
+        return '{} {} {}'.format(self.type, self.amount, self.description)
 
 
-@property
-def get_remaining_budget(self):
-    """Instantly updates the remaining budget"""
-    return self.remaining_budget
+
