@@ -16,10 +16,6 @@ class Budget(models.Model):
         """A string representation of the budget object"""
         return '{} | ${}'.format(self.name, self.total_budget)
 
-    @property
-    def get_remaining_budget(self):
-        return self.total_budget
-
 
 class Transaction(models.Model):
     """A transaction class that creates attributes in the database"""
@@ -47,4 +43,6 @@ class Transaction(models.Model):
         return '{} {} {}'.format(self.type, self.amount, self.description)
 
 
-
+@property
+def get_remaining_budget(self):
+    return self.total_budget
