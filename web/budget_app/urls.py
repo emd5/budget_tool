@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import BudgetListView, BudgetDetailView, BudgetCreateView, TransactionDetailView, TransactionCreateView
+from .views import BudgetListView, BudgetCreateView, TransactionDetailView, TransactionCreateView
 
 
 urlpatterns = [

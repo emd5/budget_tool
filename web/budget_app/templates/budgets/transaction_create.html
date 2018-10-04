@@ -1,10 +1,12 @@
 {% extends "generic/base.html" %}
 
 {% block content %}
+<div class="container">
 <h2> Create a Transaction </h2>
 <form method="post">
   {{ form.as_p }}
   {% csrf_token %}
   <input type="submit" value="save">
 </form>
+</div>
 {% endblock content %}

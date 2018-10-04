@@ -10,11 +10,15 @@ class Budget(models.Model):
 
     def __repr__(self):
         """A representation of the Budget object"""
-        return '<Budget: {}>'.format(self.name)
+        return '<Budget: {} | {}>'.format(self.name, self.total_budget)
 
     def __str__(self):
         """A string representation of the budget object"""
-        return '{}'.format(self.name)
+        return '{} | ${}'.format(self.name, self.total_budget)
+
+    @property
+    def get_remaining_budget(self):
+        return self.total_budget
 
 
 class Transaction(models.Model):
