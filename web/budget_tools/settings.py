@@ -41,10 +41,10 @@ INSTALLED_APPS = [
     'django_registration',
     'budget_tools',
     'budget_app',
-    'budget_api',
     'sass_processor',
     'rest_framework',
     'rest_framework.authtoken',
+    # 'budget_api',
 ]
 
 MIDDLEWARE = [
