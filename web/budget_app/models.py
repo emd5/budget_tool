@@ -4,22 +4,21 @@ from django.db import models
 
 class Budget(models.Model):
     """A budget class that creates attributes in the database"""
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='budgets')
     name = models.CharField(max_length=180, default='Untitled')
     total_budget = models.FloatField()
-    remaining_budget = models.FloatField()
 
     def __repr__(self):
         """A representation of the Budget object"""
-        return '<Budget: {}>'.format(self.name)
+        return '<Budget: {} | {}>'.format(self.name, self.total_budget)
 
     def __str__(self):
         """A string representation of the budget object"""
-        return '{}'.format(self.name)
+        return '{} | ${}'.format(self.name, self.total_budget)
 
     @property
     def get_remaining_budget(self):
-        """Instantly updates the remaining budget"""
-        return self.remaining_budget
+        return self.total_budget
 
 
 class Transaction(models.Model):

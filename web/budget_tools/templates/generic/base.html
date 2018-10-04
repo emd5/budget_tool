@@ -18,9 +18,12 @@
     <nav class="main_nav">
       <ul>
         <li><a href="{% url 'home' %}">Home</a></li>
+        
         {% if user.is_authenticated %}
         <li><a href="{% url 'budget_create' %}">Create a Budget</a></li>
+        <li><a href="{% url 'transaction_create' %}">Create a Transaction</a></li>
         <li><a href="{% url 'budget_view' %}">Budget List</a></li>
+        
         {% if user.is_superuser %}
         <li><a href="{% url 'admin:index' %}">Admin</a></li>
         {% endif %}
@@ -32,7 +35,9 @@
       </ul>
     </nav>
     {% if user.is_authenticated %}
-    <h3>Welcome to the site, {{ user.username }}</h3>
+    <div class="container">
+      <h3>Welcome to the site, {{ user.username }}</h3>
+    </div>
     {% endif %}
   </header>
   <main>
@@ -42,8 +47,11 @@
   </main>
   <footer>
     {% if user.is_authenticated %}
+    <div class="container">
       <h3>You're currently logged in as {{ user.username }}</h3>
+    </div>
     {% endif %}
+      
   </footer>
 </body>
 </html>

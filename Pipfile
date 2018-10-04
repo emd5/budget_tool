@@ -11,6 +11,8 @@ django-sass-processor = "*"
 django-compressor = "*"
 libsass = "*"
 gunicorn = "*"
+djangorestframework = "*"
+httpie = "*"
 
 [dev-packages]
 factory-boy = "*"
