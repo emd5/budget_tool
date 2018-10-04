@@ -18,3 +18,18 @@ class UserApiView(generics.RetrieveAPIView):
     def get_queryset(self):
         return User.objects.filter(id=self.kwargs['pk'])
 
+
+# class BudgetListApiView(generics.CreateAPIView):
+#     permission_classes = (IsAuthenticated,)
+#     authentication_classes = (TokenAuthentication,)
+#     serializer_class = BudgetSerializer
+#
+#     def get_queryset(self):
+#         return Budget.objects.filter(
+#             user_username= self.request.user.username
+#         )
+#
+#     def perform_create(self, serializer):
+#         serializer.save(user_id=self.request.user.id)
+
+
