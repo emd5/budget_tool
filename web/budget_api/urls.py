@@ -1,5 +1,6 @@
 from django.urls import path
-from .views import RegisterApiView, UserApiView, TransactionListApiView, BudgetListApiView
+from .views import RegisterApiView, UserApiView, BudgetListApiView, TransactionListApiView
+# TransactionListApiView, BudgetListApiView
 from rest_framework.authtoken import views
 
 urlpatterns = [
