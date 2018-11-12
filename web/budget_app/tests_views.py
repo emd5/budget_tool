@@ -1,5 +1,4 @@
 from django.test import TestCase, Client
-# from ..budget_project.factories import CategoryFactory, CardFactory, UserFactory
 from ..budget_tools.factories import BudgetFactory, TransactionFactory, UserFactory
 
 
@@ -50,10 +49,6 @@ class TestCategoryViews(TestCase):
         res = self.c.get('/budget_app/budgets')
 
         self.assertIn(transaction.title.encode(), res.content)
-
-
-class TestCardViews(TestCase):
-    pass
 
 
 class TestBudgetCreateViews(TestCase):

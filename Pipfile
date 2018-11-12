@@ -13,6 +13,8 @@ libsass = "*"
 gunicorn = "*"
 djangorestframework = "*"
 httpie = "*"
+pytest = "*"
+requests = "*"
 
 [dev-packages]
 factory-boy = "*"
